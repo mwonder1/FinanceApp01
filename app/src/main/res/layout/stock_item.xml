@@ -20,6 +20,7 @@
             android:id="@+id/text_view_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_2"
             android:layout_toEndOf="@id/image_view"
             android:text="Line 1"
             android:textSize="18dp"
@@ -29,7 +30,6 @@
             android:id="@+id/text_view_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_view_1"
             android:layout_toEndOf="@id/image_view"
             android:text="Line 2" />
 

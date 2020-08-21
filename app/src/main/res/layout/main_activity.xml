@@ -24,11 +24,11 @@
         android:clipToPadding="true"
         android:padding="4dp">
 
-        <TextView
+        <EditText
             android:id="@+id/tickerTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Ticker" />
+            android:hint="Enter Ticker (ie. SPY)" />
 
 
         <Button
@@ -36,7 +36,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tickerTxt"
-            android:onClick="addStock"
             android:text="Add Stock" />
 
         <Button
@@ -44,7 +43,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/addBtn"
-            android:onClick="removeStock"
             android:text="Remove Stock" />
 
 
