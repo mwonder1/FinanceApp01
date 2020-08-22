@@ -23,6 +23,7 @@ class Stocks {
         for (i in 0 until list.size) {
             return ticker == list[i].text1
         }
+        return false
     }
 
 
