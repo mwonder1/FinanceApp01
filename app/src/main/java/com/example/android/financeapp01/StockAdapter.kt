@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.stock_item.view.*
 
 class StockAdapter(
-    private val stockList: List<StockItem>,
+    private val stockList: ArrayList<StockItem>,
     private val listener: OnItemClickListener
 ) :
     RecyclerView.Adapter<StockAdapter.StockViewHolder>() {
@@ -26,6 +26,7 @@ class StockAdapter(
         holder.imageView.setImageResource(currentItem.imageResource)
         holder.textView1.text = currentItem.text1
         holder.textView2.text = currentItem.text2
+        holder.textView3.text = currentItem.text3
     }
 
     override fun getItemCount() = stockList.size
@@ -35,6 +36,7 @@ class StockAdapter(
         val imageView: ImageView = itemView.image_view
         val textView1: TextView = itemView.text_view_1
         val textView2: TextView = itemView.text_view_2
+        val textView3: TextView = itemView.text_view_3
 
         init {
             itemView.setOnClickListener(this)
@@ -47,8 +49,8 @@ class StockAdapter(
             }
         }
     }
-
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
+
 }

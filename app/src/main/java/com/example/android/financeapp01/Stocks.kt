@@ -2,30 +2,20 @@ package com.example.android.financeapp01
 
 import android.content.Context
 import android.widget.Toast
+import kotlin.random.Random
 
-val list = ArrayList<StockItem>()
+val defaulList = ArrayList<StockItem>()
 
 class Stocks {
-    fun generateDummyList(size: Int): ArrayList<StockItem> {
-        for (i in 0 until size) {
-            val drawable = when (i % 2) {
-                0 -> R.drawable.ic_arrow_up
-                else -> R.drawable.ic_arrow_down
-            }
-            val item = StockItem(drawable, "Item $i", "Line 2")
-            list += item
-        }
-        return list
-    }
-
 
     private fun isInList(ticker: String): Boolean {
-        for (i in 0 until list.size) {
-            return ticker == list[i].text1
+        for (i in 0 until defaulList.size) {
+            if (ticker == defaulList[i].text1) {
+                return true
+            }
         }
         return false
     }
-
 
     fun addStock(adapter: StockAdapter, context: Context, ticker: String) {
         if (ticker.isBlank()) {
@@ -36,12 +26,11 @@ class Stocks {
         } else {
             val image = R.drawable.ic_arrow_down
             val text2 = "Ticker"
-            val newStock = StockItem(image, ticker, text2)
-            list.add(list.size, newStock)
-            adapter.notifyItemInserted(list.size)
+            val price = Random.nextInt(999).toString()
+            val newStock = StockItem(image, ticker, text2, price)
+            defaulList.add(defaulList.size, newStock)
+            adapter.notifyItemInserted(defaulList.size)
             Toast.makeText(context, "You've added $ticker.", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 }

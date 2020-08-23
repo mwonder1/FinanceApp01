@@ -10,8 +10,7 @@ import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity(), StockAdapter.OnItemClickListener {
 
-    private val exampleList = Stocks().generateDummyList(3)
-    private val adapter = StockAdapter(exampleList, this)
+    private val adapter = StockAdapter(defaulList, this)
     private lateinit var addBtn: Button
     private lateinit var editTxt: EditText
 
@@ -33,10 +32,8 @@ class MainActivity : AppCompatActivity(), StockAdapter.OnItemClickListener {
 
     override fun onItemClick(position: Int) {
         Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
-        val clickedItem = exampleList[position]
+        val clickedItem = defaulList[position]
         clickedItem.text1 = "Clicked"
         adapter.notifyItemChanged(position)
     }
-
-
 }
