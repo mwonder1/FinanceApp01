@@ -49,6 +49,12 @@ class StockAdapter(
             }
         }
     }
+
+    fun swipeDelete(position: Int, adapter: StockAdapter) {
+        defaulList.removeAt(position)
+        adapter.notifyDataSetChanged()
+    }
+
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
